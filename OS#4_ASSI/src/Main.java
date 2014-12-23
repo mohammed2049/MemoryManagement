@@ -39,9 +39,10 @@ public class Main {
 				continue;
 			}
 			if (Deallocate.deAllo(address))
-				System.out.println("Wrong address");
-			else
 				System.out.println("Successfully deallocated");
+
+			else
+				System.out.println("Wrong address");
 		}
 	}
 
@@ -56,6 +57,7 @@ public class Main {
 			partitions.add(e);
 			address += sz;
 		}
+		//print();
 		while (true) {
 			System.out.println("Choose operation");
 			System.out.println("1. Allocation");
@@ -84,12 +86,12 @@ public class Main {
 	}
 
 	public static void print() {
-		System.out.println("i     oriSize      free      address");
+		System.out.println("i\toriSize\t\tfree\taddress");
 		for (int i = 0; i < partitions.size(); ++i) {
 			Memory e = new Memory();
 			e = partitions.get(i);
-			System.out.println(i + "     " + e.getOriginalSize() + "     "
-					+ e.getSz() + "     " + e.getAddress());
+			System.out.println(i + "\t" + e.getOriginalSize() + "\t\t"
+					+ e.getSz() + "\t" + e.getAddress());
 		}
 	}
 
