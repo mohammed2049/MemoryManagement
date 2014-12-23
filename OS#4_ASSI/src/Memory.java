@@ -2,15 +2,16 @@ public class Memory {
 	private int Sz;
 	private boolean z;
 	private int address;
+	private int originalSize;
 	Memory() {
 		setSz(0);
 		setZ(false);
 	}
 
-	Memory(int s, boolean a , int address) {
+	Memory(int s, boolean a , int address , int originalSize) {
 		Sz = s;
 		z = a;
-		this.address = address;
+		this.originalSize = originalSize;
 	}
 
 	public int getSz() {
@@ -35,5 +36,13 @@ public class Memory {
 
 	public void setAddress(int address) {
 		this.address = address;
+	}
+
+	public int getOriginalSize() {
+		return originalSize;
+	}
+
+	public void setOriginalSize(int originalSize) {
+		this.originalSize = originalSize;
 	}
 }
